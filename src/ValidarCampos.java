@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ValidarCampos {
@@ -16,14 +17,17 @@ public class ValidarCampos {
         if (arrobas != 1 || puntos != 1) {
             return false;
         }
-        String[] a = email.split("@\\.");
-        if (!a[2].matches("com") || !a[2].matches("es") || !a[2].matches("cat")) {
-            return false;
+        String[] a = email.split("@");
+        String[] b = a[1].split("\\.");
+        System.out.println(Arrays.toString(a));
+        System.out.println(Arrays.toString(b));
+        if (b[1].equals("com") || b[1].equals("es") || b[1].equals("cat")) {
+            if (b[0].equals("yahoo") || b[0].equals("gmail") || b[0].equals("hotmail") || b[0].equals("paucasesnovescifp")) {
+                return true;
+            }
         }
-        if (!a[1].matches("yahoo") || !a[1].matches("gmail") || !a[1].matches("hotmail") || !a[1].matches("paucasesnovescifp")) {
-            return false;
-        }
-        return true;
+
+        return false;
     }
 
     public static boolean validarPass(String pass) {
@@ -48,7 +52,7 @@ public class ValidarCampos {
         return true;
     }
 
-    private static boolean validarNombre(String nombre) {
+    public static boolean validarNombre(String nombre) {
         String[] bdNombres = new String[]{"a", "b", "c", "d", "e", "f", "g", "h", "i", "j"};
         if (nombre.length() > 16) {
             return false;
