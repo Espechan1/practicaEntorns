@@ -1,11 +1,39 @@
+package registro;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class ValidarCampos {
+    static int arrobas;
+
+    public static int getArrobas() {
+        return arrobas;
+    }
+
+    public static void setArrobas(int arrobas) {
+        ValidarCampos.arrobas = arrobas;
+    }
+
+    public static int getPuntos() {
+        return puntos;
+    }
+
+    public static void setPuntos(int puntos) {
+        ValidarCampos.puntos = puntos;
+    }
+
+    static int puntos;
+
+    public ValidarCampos(int arrobas) {
+    }
+
+    public ValidarCampos() {
+
+    }
 
     public static boolean validarEmail(String email) {
-        int arrobas = 0;
-        int puntos = 0;
+arrobas = 0;
+puntos = 0;
         for (int i = 0; i < email.length(); i++) {
             if (email.charAt(i) == '@') {
                 arrobas++;
@@ -52,7 +80,7 @@ public class ValidarCampos {
         return true;
     }
 
-    public static boolean validarNombre(String nombre) {
+    public static boolean validarNombre(String[] usuarios, String nombre) {
         String[] bdNombres = new String[]{"a", "b", "c", "d", "e", "f", "g", "h", "i", "j"};
         if (nombre.length() > 16) {
             return false;

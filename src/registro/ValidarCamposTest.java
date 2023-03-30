@@ -1,3 +1,5 @@
+package registro;
+
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -20,8 +22,8 @@ class ValidarCamposTest {
 
     @Test
     void validarNombres() {
-        assertTrue(ValidarCampos.validarNombre("Carles_345"));
-        assertTrue(ValidarCampos.validarNombre("Carlescanals-345"));
-        assertFalse(ValidarCampos.validarNombre("goriofrancopeo"));
+        assertTrue(ValidarCampos.validarNombre(new String[]{}, "Carles_345"));
+        assertTrue(ValidarCampos.validarNombre(new String[]{}, "Carlescanals-345"));
+        assertFalse(ValidarCampos.validarNombre(new String[]{}, "goriofrancopeo"));
     }
 }
